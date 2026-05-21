@@ -1,0 +1,191 @@
+.costs-hero {
+  background: linear-gradient(160deg, #f0fdf4 0%, #ffffff 70%);
+  padding-block: 4rem 3rem;
+  border-bottom: 1px solid var(--clr-border);
+}
+
+.costs-hero__title {
+  font-size: clamp(1.75rem, 4vw, 2.75rem);
+  font-weight: 900;
+  color: var(--clr-gray-900);
+  margin-bottom: 0.75rem;
+}
+
+.costs-hero__subtitle { font-size: 1.0625rem; color: var(--clr-muted); }
+
+.costs-body { padding-block: 3rem 5rem; display: flex; flex-direction: column; gap: 2rem; }
+
+/* Selectors */
+.costs-selectors {
+  display: flex;
+  gap: 1.25rem;
+  flex-wrap: wrap;
+}
+
+.costs-selector-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.375rem;
+  flex: 1;
+  min-width: 200px;
+}
+
+.costs-label {
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--clr-gray-700);
+}
+
+/* Summary */
+.costs-summary {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.costs-summary__card {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1.5rem 2rem;
+  border-radius: var(--radius-xl);
+  flex: 1;
+  min-width: 220px;
+}
+
+.costs-summary__card--min {
+  background: var(--clr-primary-50);
+  border: 1.5px solid var(--clr-primary-200);
+  color: var(--clr-primary-700);
+}
+
+.costs-summary__card--max {
+  background: #fef3c7;
+  border: 1.5px solid #fde68a;
+  color: #92400e;
+}
+
+.costs-summary__value {
+  font-size: 1.75rem;
+  font-weight: 900;
+  letter-spacing: -0.02em;
+  line-height: 1;
+}
+
+.costs-summary__label {
+  font-size: 0.8125rem;
+  font-weight: 500;
+  margin-top: 0.25rem;
+  opacity: 0.8;
+}
+
+.costs-summary__divider {
+  font-size: 1.125rem;
+  font-weight: 600;
+  color: var(--clr-gray-400);
+  flex-shrink: 0;
+}
+
+/* Table */
+.costs-table-wrap { overflow-x: auto; }
+
+.costs-table__title {
+  font-size: 1.125rem;
+  font-weight: 700;
+  color: var(--clr-gray-900);
+  margin-bottom: 1.25rem;
+}
+
+.costs-table {
+  display: flex;
+  flex-direction: column;
+  min-width: 600px;
+}
+
+.costs-table__head {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2.5fr;
+  gap: 1rem;
+  padding: 0.625rem 0.75rem;
+  background: var(--clr-gray-50);
+  border-radius: var(--radius-md);
+  font-size: 0.8125rem;
+  font-weight: 700;
+  color: var(--clr-gray-500);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.25rem;
+}
+
+.costs-table__row {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2.5fr;
+  gap: 1rem;
+  padding: 0.875rem 0.75rem;
+  border-bottom: 1px solid var(--clr-gray-100);
+  font-size: 0.9rem;
+  align-items: start;
+  transition: background var(--dur-150);
+}
+
+.costs-table__row:hover { background: var(--clr-gray-50); }
+
+.costs-table__category { font-weight: 600; color: var(--clr-gray-800); }
+
+.costs-table__amount { font-weight: 600; }
+.costs-table__amount--min { color: var(--clr-primary-700); }
+.costs-table__amount--max { color: #b45309; }
+
+.costs-table__note {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.375rem;
+  font-size: 0.8125rem;
+  color: var(--clr-muted);
+  line-height: 1.5;
+}
+
+.costs-table__note svg { flex-shrink: 0; margin-top: 0.1rem; color: var(--clr-gray-400); }
+
+.costs-table__total {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 2.5fr;
+  gap: 1rem;
+  padding: 1rem 0.75rem;
+  background: var(--clr-primary-50);
+  border-radius: 0 0 var(--radius-md) var(--radius-md);
+  font-size: 0.9375rem;
+}
+
+/* Disclaimer */
+.costs-disclaimer {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.625rem;
+  padding: 1rem 1.25rem;
+  background: #fffbeb;
+  border: 1px solid #fde68a;
+  border-radius: var(--radius-lg);
+  font-size: 0.875rem;
+  color: #78350f;
+  line-height: 1.6;
+}
+
+.costs-disclaimer svg { flex-shrink: 0; margin-top: 0.15rem; }
+
+/* CTA */
+.costs-cta {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.costs-cta p { font-size: 1.0625rem; font-weight: 600; color: var(--clr-gray-700); }
+
+/* Responsive */
+@media (max-width: 640px) {
+  .costs-selectors { flex-direction: column; }
+  .costs-summary__card { min-width: unset; }
+}
