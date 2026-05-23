@@ -6,70 +6,68 @@ import {
 } from 'lucide-react'
 import './Home.css'
 
-/* ── Data ── */
 const FEATURES = [
-  { Icon: Map,          color: 'blue',   title: 'Interactive World Map',     desc: 'Click any country on our live map to instantly explore its business climate, legal requirements, and startup ecosystem.' },
-  { Icon: FileText,     color: 'green',  title: 'Personalized Roadmap',      desc: 'Tell us your target country and business type — receive a fully customized, step-by-step launch guide in seconds.' },
-  { Icon: DollarSign,   color: 'gold',   title: 'Cost Estimator',            desc: 'Know exactly what to budget. Registration fees, licensing, office rent — all broken down in your local currency.' },
-  { Icon: Clock,        color: 'purple', title: 'Timeline View',             desc: 'A visual timeline shows how long every step will take, so you can plan your launch with confidence.' },
-  { Icon: Plane,        color: 'blue',   title: 'Visa & Embassy Guide',      desc: 'Complete visa guidance for Pakistani citizens — type, fees, embassy contacts, processing times, and application tips.' },
-  { Icon: Lightbulb,    color: 'green',  title: 'Business Idea Validator',   desc: 'Check if your business idea has real market demand in the target country before you commit.' },
-  { Icon: TrendingUp,   color: 'gold',   title: 'Funding & Investment',      desc: 'Discover grants, loans, and investor networks available in your target country for your specific business.' },
-  { Icon: CheckCircle,  color: 'purple', title: 'Progress Tracker',          desc: 'Save your progress, tick off completed steps, and continue from any device at any time.' },
-  { Icon: MessageSquare,color: 'blue',   title: 'AI Chatbot Assistant',      desc: 'Ask anything about business setup — our AI gives instant, accurate answers tailored to your situation.' },
-  { Icon: Users,        color: 'green',  title: 'Community Forum',           desc: 'Connect with other Pakistani entrepreneurs, share experiences, and get peer support throughout your journey.' },
-  { Icon: UserCheck,    color: 'gold',   title: 'Consultant Connect',        desc: 'Get matched with verified local business consultants in your target country for professional guidance.' },
-  { Icon: Globe,        color: 'purple', title: 'Urdu & English Support',    desc: 'Fully available in both Urdu and English so every Pakistani entrepreneur can benefit regardless of language preference.' },
+  { Icon: Map, color: 'blue', title: 'Interactive World Map', desc: 'Compare markets, setup rules, registration time, and founder-friendly advantages across global destinations.' },
+  { Icon: FileText, color: 'green', title: 'Personalized Roadmap', desc: 'Choose your target country and business type to receive a clear step-by-step launch plan.' },
+  { Icon: DollarSign, color: 'gold', title: 'Cost Estimator', desc: 'Estimate registration fees, licences, banking, workspace, and professional costs before you commit.' },
+  { Icon: Clock, color: 'purple', title: 'Timeline View', desc: 'See how long each stage can take so you can plan capital, travel, hiring, and launch dates confidently.' },
+  { Icon: Plane, color: 'blue', title: 'Visa & Mobility Guide', desc: 'Understand common business travel, founder, investor, and right-to-work routes for your destination.' },
+  { Icon: Lightbulb, color: 'green', title: 'Business Idea Validator', desc: 'Check market fit, demand signals, and common risks before spending serious time or money.' },
+  { Icon: TrendingUp, color: 'gold', title: 'Funding & Investment', desc: 'Discover grants, loans, accelerators, and investor networks relevant to your target country.' },
+  { Icon: CheckCircle, color: 'purple', title: 'Progress Tracker', desc: 'Save milestones, tick off completed steps, and return to your plan from any device.' },
+  { Icon: MessageSquare, color: 'blue', title: 'AI Chatbot Assistant', desc: 'Ask questions about setup, documents, timelines, and costs with context-aware guidance.' },
+  { Icon: Users, color: 'green', title: 'Founder Community', desc: 'Learn from other builders, share practical experiences, and get peer support during launch.' },
+  { Icon: UserCheck, color: 'gold', title: 'Consultant Connect', desc: 'Get matched with verified local consultants, accountants, and setup specialists when needed.' },
+  { Icon: Globe, color: 'purple', title: 'Global-First Support', desc: 'Designed for founders operating across borders, currencies, languages, and legal systems.' },
 ]
 
 const STEPS = [
-  { num: '01', title: 'Select Target Country',    desc: 'Open the interactive world map and click the country where you want to start your business.' },
-  { num: '02', title: 'Enter Your Business Type', desc: 'Type or select your business — restaurant, IT company, salon, supermarket, and hundreds more.' },
-  { num: '03', title: 'Enter Your Location',      desc: 'Tell us where you currently live so we can personalize visa and travel guidance for you.' },
-  { num: '04', title: 'Receive Your Full Roadmap', desc: 'Get an instant, personalized guide covering registration, documents, costs, timeline, and more.' },
+  { num: '01', title: 'Select Target Country', desc: 'Open the country explorer and pick where you want to launch.' },
+  { num: '02', title: 'Choose Business Type', desc: 'Select your industry, from tech and e-commerce to restaurants, salons, trading, and services.' },
+  { num: '03', title: 'Add Your Current Base', desc: 'Tell us where you are starting from so travel, visa, and remote setup notes are more useful.' },
+  { num: '04', title: 'Receive Your Roadmap', desc: 'Get an instant guide covering registration, documents, costs, timeline, banking, and next actions.' },
 ]
 
 const STATS = [
-  { value: '180+',  label: 'Countries Covered' },
-  { value: '500+',  label: 'Business Types' },
-  { value: '50K+',  label: 'Entrepreneurs Helped' },
-  { value: '4.9★',  label: 'Average Rating' },
+  { value: '180+', label: 'Countries Covered' },
+  { value: '500+', label: 'Business Types' },
+  { value: '50K+', label: 'Founders Guided' },
+  { value: '4.9/5', label: 'Average Rating' },
 ]
 
 const COUNTRIES = [
-  { code: '🇺🇸', name: 'United States' },
-  { code: '🇬🇧', name: 'United Kingdom' },
-  { code: '🇨🇦', name: 'Canada' },
-  { code: '🇦🇪', name: 'UAE' },
-  { code: '🇦🇺', name: 'Australia' },
-  { code: '🇩🇪', name: 'Germany' },
+  { code: 'US', name: 'United States' },
+  { code: 'UK', name: 'United Kingdom' },
+  { code: 'CA', name: 'Canada' },
+  { code: 'AE', name: 'UAE' },
+  { code: 'AU', name: 'Australia' },
+  { code: 'DE', name: 'Germany' },
 ]
 
 const TESTIMONIALS = [
   {
     name: 'Bilal Ahmed',
     role: 'Restaurant Owner, UK',
-    text: 'LaunchBridge gave me a complete roadmap for opening my restaurant in London. In just 10 minutes I had every step, cost, and document I needed. What would have taken weeks of research was done instantly.',
+    text: 'LaunchBridge gave me a complete roadmap for opening my restaurant in London. In minutes I had the steps, costs, and documents I needed.',
     avatar: 'BA',
-    flag: '🇬🇧',
+    market: 'UK',
   },
   {
     name: 'Sana Malik',
     role: 'IT Company, Canada',
-    text: 'I had no idea how to register a tech company in Canada as a Pakistani national. This platform walked me through everything — visa, company formation, tax ID — all in simple Urdu and English.',
+    text: 'I used LaunchBridge to understand Canadian incorporation, tax registration, banking, and the order to do everything in.',
     avatar: 'SM',
-    flag: '🇨🇦',
+    market: 'CA',
   },
   {
     name: 'Omar Farooq',
     role: 'Supermarket, UAE',
-    text: "The cost estimator alone saved me from under-budgeting by 30%. I now know exactly what I need and when. The consultant connect feature helped me find a Dubai-based lawyer who specialised in my business type.",
+    text: 'The cost estimator saved me from under-budgeting. I could compare free zone and mainland paths before speaking with a consultant.',
     avatar: 'OF',
-    flag: '🇦🇪',
+    market: 'AE',
   },
 ]
 
-/* ── Components ── */
 function FeatureCard({ Icon, color, title, desc }) {
   return (
     <article className={`feature-card feature-card--${color}`}>
@@ -97,7 +95,7 @@ function StepCard({ num, title, desc, isLast }) {
   )
 }
 
-function TestimonialCard({ name, role, text, avatar, flag }) {
+function TestimonialCard({ name, role, text, avatar, market }) {
   return (
     <article className="testimonial-card">
       <div className="testimonial-card__stars" aria-label="5 stars">
@@ -109,7 +107,7 @@ function TestimonialCard({ name, role, text, avatar, flag }) {
       <div className="testimonial-card__author">
         <div className="testimonial-card__avatar" aria-hidden="true">{avatar}</div>
         <div>
-          <p className="testimonial-card__name">{name} <span>{flag}</span></p>
+          <p className="testimonial-card__name">{name} <span>{market}</span></p>
           <p className="testimonial-card__role">{role}</p>
         </div>
       </div>
@@ -117,12 +115,42 @@ function TestimonialCard({ name, role, text, avatar, flag }) {
   )
 }
 
-/* ── Page ── */
+function HeroVisual() {
+  return (
+    <div className="hero__visual anim-fade-up delay-3" aria-hidden="true">
+      <div className="hero-3d">
+        <div className="hero-3d__stage">
+          <div className="hero-3d__globe">
+            <span className="hero-3d__lat hero-3d__lat--1" />
+            <span className="hero-3d__lat hero-3d__lat--2" />
+            <span className="hero-3d__lat hero-3d__lat--3" />
+            <span className="hero-3d__ring hero-3d__ring--1" />
+            <span className="hero-3d__ring hero-3d__ring--2" />
+            <span className="hero-3d__pin hero-3d__pin--1">UK</span>
+            <span className="hero-3d__pin hero-3d__pin--2">US</span>
+            <span className="hero-3d__pin hero-3d__pin--3">AE</span>
+          </div>
+          <div className="hero-3d__panel hero-3d__panel--top">
+            <span>Launch Plan</span>
+            <strong>72% ready</strong>
+          </div>
+          <div className="hero-3d__panel hero-3d__panel--left">
+            <span>Markets</span>
+            <strong>180+</strong>
+          </div>
+          <div className="hero-3d__panel hero-3d__panel--right">
+            <span>Setup time</span>
+            <strong>1-14 days</strong>
+          </div>
+        </div>
+      </div>
+    </div>
+  )
+}
+
 export default function Home() {
   return (
     <main className="home">
-
-      {/* ── Hero ── */}
       <section className="hero" aria-label="Hero">
         <div className="hero__bg-shapes" aria-hidden="true">
           <div className="hero__shape hero__shape--1" />
@@ -132,25 +160,16 @@ export default function Home() {
         <div className="container hero__inner">
           <div className="hero__content anim-fade-up">
             <div className="hero__badges">
-              <span className="badge badge-blue">
-                <Zap size={11} />
-                Free to Start
-              </span>
-              <span className="badge badge-green">
-                180+ Countries
-              </span>
+              <span className="badge badge-blue"><Zap size={11} /> Free to Start</span>
+              <span className="badge badge-green">180+ Countries</span>
             </div>
             <h1 className="hero__title">
-              Pakistan se{' '}
-              <span className="gradient-text">Duniya Tak</span>
+              Build beyond borders with <span className="gradient-text">LaunchBridge</span>
             </h1>
-            <p className="hero__urdu" lang="ur" dir="rtl">
-              پاکستان سے دنیا تک — ہر ملک میں کاروبار شروع کریں
-            </p>
             <p className="hero__subtitle">
-              Stop spending weeks researching scattered websites in complicated English.
+              Stop jumping between scattered government pages, forums, and outdated blogs.
               Get your <strong>complete, personalized business launch roadmap</strong> for any
-              country in the world — in minutes, not months.
+              country in the world in minutes.
             </p>
             <div className="hero__actions">
               <Link to="/roadmap" className="btn btn-primary btn-lg">
@@ -164,45 +183,13 @@ export default function Home() {
             </div>
             <div className="hero__trust">
               <Shield size={14} />
-              <span>No sign-up required &nbsp;·&nbsp; 100% free &nbsp;·&nbsp; Available in Urdu &amp; English</span>
+              <span>No sign-up required. 100% free starter tools. Built for founders worldwide.</span>
             </div>
           </div>
 
-          {/* Hero visual card */}
-          <div className="hero__visual anim-fade-up delay-3" aria-hidden="true">
-            <div className="hero-card">
-              <div className="hero-card__header">
-                <Globe size={18} className="hero-card__globe" />
-                <span>Your Roadmap</span>
-                <span className="badge badge-green" style={{ fontSize: '0.7rem', padding: '0.15rem 0.5rem' }}>Live</span>
-              </div>
-              <div className="hero-card__country-row">
-                <span>🇬🇧</span>
-                <span className="hero-card__country-name">United Kingdom</span>
-                <span className="hero-card__arrow">→</span>
-                <span>Restaurant</span>
-              </div>
-              <ul className="hero-card__steps">
-                {['Choose business structure', 'Register with Companies House', 'Apply for Food Standards licence', 'Set up business bank account', 'Hire & onboard staff'].map((step, i) => (
-                  <li key={i} className="hero-card__step">
-                    <span className="hero-card__step-check">✓</span>
-                    <span className={i < 3 ? 'hero-card__step-done' : ''}>{step}</span>
-                  </li>
-                ))}
-              </ul>
-              <div className="hero-card__progress">
-                <div className="hero-card__progress-label">
-                  <span>Progress</span><span>60%</span>
-                </div>
-                <div className="hero-card__progress-bar">
-                  <div className="hero-card__progress-fill" style={{ width: '60%' }} />
-                </div>
-              </div>
-            </div>
-          </div>
+          <HeroVisual />
         </div>
 
-        {/* Country quick-links */}
         <div className="hero__countries container">
           <span className="hero__countries-label">Popular destinations:</span>
           <div className="hero__countries-list" role="list">
@@ -221,7 +208,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Stats ── */}
       <section className="stats-bar" aria-label="Platform statistics">
         <div className="container stats-bar__inner">
           {STATS.map(({ value, label }) => (
@@ -233,7 +219,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Features ── */}
       <section className="section features-section" id="features" aria-labelledby="features-heading">
         <div className="container">
           <div className="text-center">
@@ -242,7 +227,7 @@ export default function Home() {
               One Platform. <span className="gradient-text">Zero Confusion.</span>
             </h2>
             <p className="section-subtitle">
-              From visa guidance to cost estimation — every tool a Pakistani entrepreneur needs to launch a business abroad, in one place.
+              From country comparison to costs and launch steps, every major tool for cross-border business setup lives in one place.
             </p>
           </div>
           <div className="features-grid">
@@ -253,7 +238,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── How It Works ── */}
       <section className="section how-section" id="how-it-works" aria-labelledby="how-heading">
         <div className="container how-section__inner">
           <div className="how-section__text">
@@ -262,10 +246,10 @@ export default function Home() {
               From Idea to Launch in <span className="gradient-text">4 Simple Steps</span>
             </h2>
             <p className="section-subtitle">
-              No legal jargon. No confusing government websites. Just a clear path from where you are to where you want to be.
+              No legal jargon. No confusing government rabbit holes. Just a clear path from where you are to where you want to build.
             </p>
             <Link to="/roadmap" className="btn btn-primary" style={{ marginTop: '2rem' }}>
-              Try It Now — Free
+              Try It Now - Free
               <ArrowRight size={16} />
             </Link>
           </div>
@@ -277,7 +261,6 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── Testimonials ── */}
       <section className="section testimonials-section" aria-labelledby="testimonials-heading">
         <div className="container">
           <div className="text-center">
@@ -286,7 +269,7 @@ export default function Home() {
               Real People. <span className="gradient-text">Real Businesses.</span>
             </h2>
             <p className="section-subtitle">
-              Hear from Pakistanis who used LaunchBridge to turn their dream into a running business abroad.
+              See how founders used LaunchBridge to turn complex international setup into a clear plan.
             </p>
           </div>
           <div className="testimonials-grid">
@@ -303,22 +286,19 @@ export default function Home() {
         </div>
       </section>
 
-      {/* ── CTA Banner ── */}
       <section className="cta-banner" aria-label="Call to action">
         <div className="container cta-banner__inner">
           <div className="cta-banner__content">
-            <h2 className="cta-banner__title">
-              Your business journey starts with one click.
-            </h2>
+            <h2 className="cta-banner__title">Your global business journey starts with one click.</h2>
             <p className="cta-banner__subtitle">
-              Join thousands of Pakistani entrepreneurs who have already used LaunchBridge to plan their dream business abroad.
+              Join founders using LaunchBridge to compare destinations, budget smarter, and launch across borders.
             </p>
             <div className="cta-banner__actions">
               <Link to="/roadmap" className="btn btn-white btn-lg">
                 Get My Free Roadmap
                 <ArrowRight size={18} />
               </Link>
-              <Link to="/explore" className="btn btn-lg" style={{ color: '#fff', border: '2px solid rgba(255,255,255,0.4)' }}>
+              <Link to="/explore" className="btn btn-lg" style={{ color: '#fff', border: '2px solid rgba(255,255,255,0.45)' }}>
                 <Globe size={18} />
                 Explore Countries
               </Link>
@@ -329,7 +309,6 @@ export default function Home() {
           </div>
         </div>
       </section>
-
     </main>
   )
 }

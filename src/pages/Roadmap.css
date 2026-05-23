@@ -1,7 +1,19 @@
 .roadmap-hero {
-  background: linear-gradient(160deg, #eff6ff 0%, #ffffff 70%);
+  background: var(--page-hero-bg);
   padding-block: 4rem 3rem;
   border-bottom: 1px solid var(--clr-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.roadmap-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--grid-bg);
+  background-size: 44px 44px;
+  opacity: 0.55;
+  pointer-events: none;
 }
 
 .roadmap-hero__title {
@@ -136,7 +148,7 @@
 
 .roadmap-progress__fill {
   height: 100%;
-  background: linear-gradient(90deg, var(--clr-primary-500), var(--clr-accent-500));
+  background: linear-gradient(90deg, var(--clr-primary-600), var(--clr-accent-500));
   border-radius: var(--radius-full);
   transition: width 0.4s var(--ease-out);
 }
@@ -150,8 +162,15 @@
   border: 1.5px solid var(--clr-border);
   border-radius: var(--radius-xl);
   overflow: hidden;
-  background: #fff;
-  transition: border-color var(--dur-150);
+  background: var(--glass-bg);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(14px);
+  transition: border-color var(--dur-150), transform var(--dur-200), box-shadow var(--dur-200);
+}
+
+.roadmap-phase:hover {
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-md);
 }
 
 .roadmap-phase--blue.roadmap-phase--open   { border-color: var(--clr-primary-300); }
@@ -183,7 +202,7 @@
   flex-shrink: 0;
 }
 
-.roadmap-phase__icon--blue   { background: var(--clr-primary-50);  color: var(--clr-primary-600); }
+.roadmap-phase__icon--blue   { background: var(--clr-primary-100);  color: var(--clr-primary-700); }
 .roadmap-phase__icon--green  { background: #d1fae5; color: var(--clr-accent-600); }
 .roadmap-phase__icon--gold   { background: #fef3c7; color: #b45309; }
 .roadmap-phase__icon--purple { background: #ede9fe; color: #7c3aed; }

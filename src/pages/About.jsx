@@ -1,71 +1,67 @@
-import { Globe, Users, Shield, Zap, Mail, MapPin, GraduationCap, Heart, ArrowRight } from 'lucide-react'
-import { Link } from 'react-router-dom'
+import { Globe, Users, Shield, Zap, Mail, MapPin, GraduationCap } from 'lucide-react'
 import './About.css'
 
 const VALUES = [
-  { Icon: Shield,  color: 'blue',   title: 'Accuracy First',       desc: 'Every guide is researched from official government sources. We flag what requires professional advice.' },
-  { Icon: Users,   color: 'green',  title: 'Pakistani Community',  desc: 'Built specifically for Pakistani entrepreneurs. We understand your specific challenges and legal situation.' },
-  { Icon: Globe,   color: 'gold',   title: 'Truly Global',         desc: 'From the USA to Singapore to Germany — we cover 180+ countries with up-to-date business setup information.' },
-  { Icon: Zap,     color: 'purple', title: 'Simple & Fast',        desc: 'No jargon. No walls of text. Just clear, actionable steps you can actually follow without a law degree.' },
+  { Icon: Shield, color: 'blue', title: 'Accuracy First', desc: 'Guides are structured around official requirements and clearly flag where professional advice is needed.' },
+  { Icon: Users, color: 'green', title: 'Founder-Centered', desc: 'Built for people who need practical steps, plain language, and confidence before they spend money.' },
+  { Icon: Globe, color: 'gold', title: 'Truly Global', desc: 'From the USA to Singapore to Germany, LaunchBridge is designed for entrepreneurs building across borders.' },
+  { Icon: Zap, color: 'purple', title: 'Simple & Fast', desc: 'No jargon. No endless tabs. Just clear actions you can follow without needing a law degree.' },
 ]
 
 const FAQS = [
   {
     q: 'Is LaunchBridge completely free?',
-    a: 'The core features — roadmap generator, cost estimator, country explorer, and forum — are completely free with no sign-up required. Premium features like detailed AI roadmaps, progress tracking, and consultant connections will be available via a subscription in future.',
+    a: 'The core tools - roadmap generator, cost estimator, country explorer, and forum preview - are free with no sign-up required. Premium features may be added later.',
   },
   {
     q: 'How accurate is the information?',
-    a: 'All information is researched from official government websites, embassy resources, and verified local business consultants. However, laws change frequently. Always verify the latest requirements with official sources and consult a licensed professional before making decisions.',
+    a: 'LaunchBridge is designed around official government information, embassy resources, and common local setup workflows. Requirements change often, so always verify the latest rules with official sources before making decisions.',
   },
   {
-    q: 'Can I use this to start a business from Pakistan without moving abroad?',
-    a: 'Yes. Many users register businesses in countries like the USA, UK, or UAE while remaining in Pakistan — particularly for e-commerce and consulting companies. The platform covers this scenario and explains the relevant rules.',
+    q: 'Can I use this if I am not living in the target country?',
+    a: 'Yes. Many founders register or plan companies while based elsewhere, especially for e-commerce, consulting, software, and holding-company structures. The roadmap helps you think through remote setup, travel, banking, and local representation.',
   },
   {
     q: 'What is the difference between a Free Zone and Mainland company in the UAE?',
-    a: 'A Free Zone company gives you 100% ownership but limits you to dealing with international clients or selling within the free zone. A Mainland company allows you to trade directly with UAE-based customers but historically required a local sponsor. The Roadmap page explains this in detail for your specific business type.',
+    a: 'A Free Zone company often offers easier setup and foreign ownership, while Mainland setup can be better for trading directly in the local market. The best route depends on business activity, customers, office needs, and licensing.',
   },
   {
     q: 'Do you offer legal or immigration advice?',
-    a: 'No. LaunchBridge provides educational information only. Nothing on this platform constitutes legal, immigration, or financial advice. We strongly recommend consulting a licensed lawyer or immigration consultant for your specific situation.',
+    a: 'No. LaunchBridge provides educational information only. Nothing here is legal, immigration, tax, or financial advice. Consult licensed professionals for your exact situation.',
   },
   {
     q: 'Will you add more countries?',
-    a: 'Yes. We are continuously expanding our coverage. If you need a country that is not yet listed, please contact us and we will prioritise it.',
+    a: 'Yes. Coverage is meant to expand continuously as more country workflows and business types are added.',
   },
 ]
 
 export default function About() {
   return (
     <main className="about-page page-content">
-      {/* Hero */}
       <div className="about-hero">
         <div className="container">
           <p className="section-label">About LaunchBridge</p>
           <h1 className="about-hero__title">
-            Built to Bridge the Gap Between{' '}
-            <span className="gradient-text">Dreams and Reality</span>
+            Built to Bridge the Gap Between <span className="gradient-text">Dreams and Reality</span>
           </h1>
           <p className="about-hero__subtitle">
-            Millions of Pakistanis have the drive, the savings, and the skills to start a successful business abroad. The only thing standing in their way is information — scattered, complicated, and inaccessible.
+            Entrepreneurs everywhere have ideas, skills, and ambition. The hard part is often the same: finding a clear, trustworthy path through registration, licences, costs, visas, banking, and local rules.
             <br /><br />
-            LaunchBridge was built to solve exactly this problem.
+            LaunchBridge turns that messy research into a practical launch plan.
           </p>
         </div>
       </div>
 
-      {/* Mission */}
       <section className="about-mission section">
         <div className="container about-mission__inner">
           <div className="about-mission__text">
             <p className="section-label">Our Mission</p>
-            <h2 className="section-title">Pakistan se Duniya Tak</h2>
+            <h2 className="section-title">Build Beyond Borders</h2>
             <p className="about-mission__body">
-              Pakistan is home to one of the world's most entrepreneurial communities. From Karachi to the UK, from Lahore to Canada, Pakistanis have built successful businesses across every continent.
+              Starting a business in another country should not feel impossible before you even begin. The information exists, but it is scattered across government portals, consultant pages, old forum posts, and local rules.
             </p>
             <p className="about-mission__body">
-              But too many dreams are abandoned at the starting line — not because people lack the ability or the resources, but because they cannot find a clear, simple, trustworthy answer to the question: <em>"How do I actually do this?"</em>
+              Too many good ideas stop at the planning stage because founders cannot answer one simple question: <em>"What should I do first?"</em>
             </p>
             <p className="about-mission__body">
               LaunchBridge answers that question. One platform. Every country. Step by step.
@@ -74,15 +70,14 @@ export default function About() {
           <div className="about-mission__visual" aria-hidden="true">
             <div className="about-mission__globe-wrap">
               <Globe size={180} strokeWidth={0.5} className="about-mission__globe" />
-              <div className="about-mission__badge-1 badge badge-blue">🇵🇰 Pakistan</div>
-              <div className="about-mission__badge-2 badge badge-green">🌍 180+ Countries</div>
-              <div className="about-mission__badge-3 badge badge-gold">🚀 Launch Ready</div>
+              <div className="about-mission__badge-1 badge badge-blue">Global Founders</div>
+              <div className="about-mission__badge-2 badge badge-green">180+ Countries</div>
+              <div className="about-mission__badge-3 badge badge-gold">Launch Ready</div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Values */}
       <section className="about-values section" aria-labelledby="values-heading">
         <div className="container">
           <div className="text-center">
@@ -103,7 +98,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Creator */}
       <section className="about-creator section">
         <div className="container about-creator__inner">
           <div className="about-creator__card">
@@ -118,10 +112,10 @@ export default function About() {
                 Aptech Computer Education, 2026
               </p>
               <p className="about-creator__bio">
-                This platform was born from a real observation: the people around me — young students, experienced professionals, and driven businessmen — all had the same dream and the same problem. They knew <em>what</em> they wanted to build. They just didn't know <em>how</em> to get started in a foreign country.
+                LaunchBridge began as a practical answer to a real problem: people know what they want to build, but cross-border setup feels confusing before the first form is even opened.
               </p>
               <p className="about-creator__bio">
-                LaunchBridge is my answer to that gap. It is not just an Aptech project — it is a genuine solution to a problem that affects millions of Pakistanis every day. With the right development and support, I believe it can become the number one business launch platform for South Asian entrepreneurs worldwide.
+                The goal is to make the platform useful for founders worldwide, regardless of where they are based or where they want to launch.
               </p>
               <div className="about-creator__tags">
                 <span className="badge badge-blue">React.js</span>
@@ -134,7 +128,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* FAQ */}
       <section className="about-faq section" id="faq" aria-labelledby="faq-heading">
         <div className="container about-faq__inner">
           <div>
@@ -155,7 +148,6 @@ export default function About() {
         </div>
       </section>
 
-      {/* Contact */}
       <section className="about-contact section" id="contact" aria-labelledby="contact-heading">
         <div className="container">
           <div className="about-contact__card">
@@ -168,64 +160,33 @@ export default function About() {
               <div className="about-contact__details">
                 <div className="about-contact__detail">
                   <Mail size={16} />
-                  <span>hello@launchbridge.pk</span>
+                  <span>hello@launchbridge.com</span>
                 </div>
                 <div className="about-contact__detail">
                   <MapPin size={16} />
-                  <span>Aptech Computer Education, Pakistan</span>
+                  <span>Remote-first global project</span>
                 </div>
               </div>
             </div>
 
-            <form
-              className="about-contact__form"
-              onSubmit={e => e.preventDefault()}
-              aria-label="Contact form"
-              noValidate
-            >
+            <form className="about-contact__form" onSubmit={e => e.preventDefault()} aria-label="Contact form" noValidate>
               <div className="about-contact__form-row">
                 <div>
                   <label htmlFor="contact-name" className="about-contact__form-label">Your Name</label>
-                  <input
-                    id="contact-name"
-                    type="text"
-                    className="input"
-                    placeholder="Muhammad Ali"
-                    maxLength={100}
-                    autoComplete="name"
-                  />
+                  <input id="contact-name" type="text" className="input" placeholder="Alex Morgan" maxLength={100} autoComplete="name" />
                 </div>
                 <div>
                   <label htmlFor="contact-email" className="about-contact__form-label">Email Address</label>
-                  <input
-                    id="contact-email"
-                    type="email"
-                    className="input"
-                    placeholder="ali@example.com"
-                    maxLength={254}
-                    autoComplete="email"
-                  />
+                  <input id="contact-email" type="email" className="input" placeholder="alex@example.com" maxLength={254} autoComplete="email" />
                 </div>
               </div>
               <div>
                 <label htmlFor="contact-subject" className="about-contact__form-label">Subject</label>
-                <input
-                  id="contact-subject"
-                  type="text"
-                  className="input"
-                  placeholder="Country request, feedback, partnership…"
-                  maxLength={200}
-                />
+                <input id="contact-subject" type="text" className="input" placeholder="Country request, feedback, partnership..." maxLength={200} />
               </div>
               <div>
                 <label htmlFor="contact-message" className="about-contact__form-label">Message</label>
-                <textarea
-                  id="contact-message"
-                  className="input about-contact__textarea"
-                  placeholder="Tell us about your question or idea…"
-                  rows={5}
-                  maxLength={2000}
-                />
+                <textarea id="contact-message" className="input about-contact__textarea" placeholder="Tell us about your question or idea..." rows={5} maxLength={2000} />
               </div>
               <button type="submit" className="btn btn-primary">
                 <Mail size={16} />

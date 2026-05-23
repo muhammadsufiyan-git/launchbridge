@@ -1,7 +1,19 @@
 .about-hero {
-  background: linear-gradient(160deg, #eff6ff 0%, #ffffff 70%);
+  background: var(--page-hero-bg);
   padding-block: 4rem 3rem;
   border-bottom: 1px solid var(--clr-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.about-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--grid-bg);
+  background-size: 44px 44px;
+  opacity: 0.55;
+  pointer-events: none;
 }
 
 .about-hero__title {
@@ -50,7 +62,7 @@
   height: 280px;
 }
 
-.about-mission__globe { color: var(--clr-primary-200); animation: rotateSlow 30s linear infinite; }
+.about-mission__globe { color: var(--clr-primary-300); animation: rotateSlow 30s linear infinite; }
 
 .about-mission__badge-1,
 .about-mission__badge-2,
@@ -66,7 +78,7 @@
 .about-mission__badge-3 { bottom: 40px; left: 10px; }
 
 /* ── Values ── */
-.about-values { background: var(--clr-surface); }
+.about-values { background: linear-gradient(180deg, var(--clr-surface) 0%, #fff 100%); }
 
 .about-values__grid {
   display: grid;
@@ -76,14 +88,16 @@
 }
 
 .about-value-card {
-  background: #fff;
-  border: 1px solid var(--clr-border);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-xl);
   padding: 1.75rem;
-  transition: transform var(--dur-200), box-shadow var(--dur-200);
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(16px);
+  transition: transform var(--dur-200), box-shadow var(--dur-200), border-color var(--dur-200);
 }
 
-.about-value-card:hover { transform: translateY(-3px); box-shadow: var(--shadow-lg); }
+.about-value-card:hover { transform: translateY(-5px) rotateX(2deg); box-shadow: var(--shadow-lg); }
 
 .about-value-card--blue:hover  { border-color: var(--clr-primary-200); }
 .about-value-card--green:hover { border-color: #a7f3d0; }
@@ -97,7 +111,7 @@
   margin-bottom: 1rem;
 }
 
-.about-value-card__icon--blue   { background: var(--clr-primary-50);  color: var(--clr-primary-600); }
+.about-value-card__icon--blue   { background: var(--clr-primary-100);  color: var(--clr-primary-700); }
 .about-value-card__icon--green  { background: #d1fae5; color: var(--clr-accent-600); }
 .about-value-card__icon--gold   { background: #fef3c7; color: #b45309; }
 .about-value-card__icon--purple { background: #ede9fe; color: #7c3aed; }
@@ -120,18 +134,20 @@
   display: flex;
   gap: 3rem;
   align-items: flex-start;
-  background: linear-gradient(135deg, var(--clr-primary-50) 0%, #f5f3ff 100%);
-  border: 1.5px solid var(--clr-primary-200);
+  background: linear-gradient(135deg, rgb(238 244 255 / 0.94) 0%, rgb(248 250 252 / 0.92) 100%);
+  border: 1.5px solid rgb(255 255 255 / 0.8);
   border-radius: var(--radius-2xl);
   padding: 3rem;
   max-width: 860px;
+  box-shadow: var(--shadow-xl);
+  backdrop-filter: blur(18px);
 }
 
 .about-creator__avatar {
   width: 100px;
   height: 100px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--clr-primary-600), #7c3aed);
+  background: linear-gradient(135deg, var(--clr-primary-700), var(--clr-primary-500));
   color: #fff;
   display: flex;
   align-items: center;
@@ -171,7 +187,7 @@
 .about-creator__tags { display: flex; gap: 0.5rem; flex-wrap: wrap; margin-top: 0.5rem; }
 
 /* ── FAQ ── */
-.about-faq { background: var(--clr-surface); }
+.about-faq { background: linear-gradient(180deg, var(--clr-surface) 0%, #fff 100%); }
 
 .about-faq__inner {
   display: grid;
@@ -183,8 +199,8 @@
 .about-faq__list { display: flex; flex-direction: column; gap: 0.625rem; }
 
 .faq-item {
-  background: #fff;
-  border: 1px solid var(--clr-border);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   overflow: hidden;
   transition: border-color var(--dur-150);
@@ -237,10 +253,12 @@
   display: grid;
   grid-template-columns: 1fr 1.5fr;
   gap: 4rem;
-  background: linear-gradient(135deg, var(--clr-gray-50) 0%, #f5f3ff 100%);
-  border: 1px solid var(--clr-border);
+  background: linear-gradient(135deg, rgb(248 250 252 / 0.94) 0%, rgb(238 244 255 / 0.9) 100%);
+  border: 1px solid rgb(255 255 255 / 0.8);
   border-radius: var(--radius-2xl);
   padding: 3rem;
+  box-shadow: var(--shadow-lg);
+  backdrop-filter: blur(18px);
 }
 
 .about-contact__title {

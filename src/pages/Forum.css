@@ -1,7 +1,19 @@
 .forum-hero {
-  background: linear-gradient(160deg, #f5f3ff 0%, #ffffff 70%);
+  background: var(--page-hero-bg);
   padding-block: 4rem 3rem;
   border-bottom: 1px solid var(--clr-border);
+  position: relative;
+  overflow: hidden;
+}
+
+.forum-hero::before {
+  content: "";
+  position: absolute;
+  inset: 0;
+  background: var(--grid-bg);
+  background-size: 44px 44px;
+  opacity: 0.55;
+  pointer-events: none;
 }
 
 .forum-hero__title {
@@ -43,7 +55,7 @@
   font-family: var(--font-sans);
   font-size: 0.9375rem;
   color: var(--clr-text);
-  background: #fff;
+  background: rgb(255 255 255 / 0.86);
   transition: border-color var(--dur-150), box-shadow var(--dur-150);
 }
 
@@ -80,9 +92,9 @@
 .forum-category-btn:hover { background: var(--clr-gray-200); color: var(--clr-gray-900); }
 
 .forum-category-btn--active {
-  background: var(--clr-primary-600);
+  background: linear-gradient(135deg, var(--clr-primary-700), var(--clr-primary-500));
   color: #fff;
-  border-color: var(--clr-primary-600);
+  border-color: transparent;
 }
 
 .forum-count {
@@ -101,16 +113,18 @@
   display: flex;
   gap: 1.25rem;
   padding: 1.25rem 1.5rem;
-  background: #fff;
-  border: 1px solid var(--clr-border);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-xl);
   cursor: pointer;
+  box-shadow: var(--shadow-sm);
+  backdrop-filter: blur(16px);
   transition: transform var(--dur-200) var(--ease-out), box-shadow var(--dur-200) var(--ease-out), border-color var(--dur-200);
   text-align: left;
 }
 
 .thread-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px) rotateX(1deg);
   box-shadow: var(--shadow-md);
   border-color: var(--clr-primary-200);
 }
@@ -121,8 +135,8 @@
 }
 
 .thread-card--pinned {
-  border-color: #fde68a;
-  background: #fffdf5;
+  border-color: var(--clr-primary-200);
+  background: rgb(238 244 255 / 0.78);
 }
 
 .thread-card__left {
@@ -139,7 +153,7 @@
   width: 38px;
   height: 38px;
   border-radius: 50%;
-  background: linear-gradient(135deg, var(--clr-primary-600), #7c3aed);
+  background: linear-gradient(135deg, var(--clr-primary-700), var(--clr-primary-500));
   color: #fff;
   display: flex;
   align-items: center;
@@ -246,8 +260,8 @@
 .forum-cta-note {
   margin-top: 2rem;
   padding: 1rem 1.25rem;
-  background: var(--clr-gray-50);
-  border: 1px solid var(--clr-border);
+  background: var(--glass-bg);
+  border: 1px solid var(--glass-border);
   border-radius: var(--radius-lg);
   font-size: 0.875rem;
   color: var(--clr-muted);

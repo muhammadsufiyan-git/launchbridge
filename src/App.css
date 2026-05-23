@@ -1,4 +1,4 @@
-/* App-level layout resets — all component styles live in their own CSS files */
+/* App-level layout resets. Component styles live in their own CSS files. */
 #root {
   width: 100%;
   min-height: 100vh;
