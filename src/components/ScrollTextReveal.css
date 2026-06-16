@@ -1,0 +1,96 @@
+.text-reveal {
+  opacity: 0;
+  transform: translate3d(0, 18px, 0) scale(0.99);
+  filter: blur(2px);
+  transition:
+    opacity 860ms var(--ease-out) var(--reveal-delay, 0ms),
+    transform 860ms var(--ease-out) var(--reveal-delay, 0ms),
+    filter 860ms var(--ease-out) var(--reveal-delay, 0ms),
+    text-shadow 860ms var(--ease-out) var(--reveal-delay, 0ms);
+  will-change: opacity, transform, filter, text-shadow;
+}
+
+.text-reveal[data-reveal-direction="left"] {
+  transform: translate3d(-28px, 8px, 0) scale(0.99);
+}
+
+.text-reveal[data-reveal-direction="right"] {
+  transform: translate3d(28px, 8px, 0) scale(0.99);
+}
+
+.text-reveal[data-reveal-direction="pop"] {
+  transform: translate3d(0, 14px, 0) scale(0.94);
+}
+
+.text-reveal--resetting {
+  transition-duration: 260ms;
+  transition-delay: 0ms;
+}
+
+.text-reveal--visible {
+  opacity: 1;
+  transform: translate3d(0, 0, 0) scale(1);
+  filter: blur(0);
+}
+
+h1.text-reveal--visible,
+h2.text-reveal--visible,
+.section-title.text-reveal--visible {
+  text-shadow: 0 0 18px rgb(87 214 255 / 0.06);
+}
+
+.btn.text-reveal {
+  transform: translate3d(0, 14px, 0) scale(0.94);
+}
+
+.btn.text-reveal--visible {
+  transform: translate3d(0, 0, 0) scale(1);
+}
+
+.story-card .text-reveal,
+.thread-card .text-reveal,
+.country-card .text-reveal,
+.feature-card .text-reveal,
+.testimonial-card .text-reveal {
+  transform: translate3d(0, 10px, 0);
+  filter: none;
+}
+
+.story-card .text-reveal--visible,
+.thread-card .text-reveal--visible,
+.country-card .text-reveal--visible,
+.feature-card .text-reveal--visible,
+.testimonial-card .text-reveal--visible {
+  transform: translate3d(0, 0, 0);
+}
+
+.hero__title.text-reveal,
+.explore-header__title.text-reveal,
+.roadmap-hero__title.text-reveal,
+.costs-hero__title.text-reveal,
+.stories-hero__title.text-reveal,
+.forum-hero__title.text-reveal,
+.about-hero__title.text-reveal {
+  transform: translate3d(-24px, 0, 0) scale(0.995);
+  filter: none;
+}
+
+.hero__title.text-reveal--visible,
+.explore-header__title.text-reveal--visible,
+.roadmap-hero__title.text-reveal--visible,
+.costs-hero__title.text-reveal--visible,
+.stories-hero__title.text-reveal--visible,
+.forum-hero__title.text-reveal--visible,
+.about-hero__title.text-reveal--visible {
+  transform: translate3d(0, 0, 0) scale(1);
+  text-shadow: 0 16px 40px rgb(0 0 0 / 0.22), 0 0 20px rgb(87 214 255 / 0.06);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .text-reveal {
+    opacity: 1;
+    transform: none;
+    filter: none;
+    transition: none;
+  }
+}

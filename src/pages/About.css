@@ -101,7 +101,7 @@
 
 .about-value-card--blue:hover  { border-color: var(--clr-primary-200); }
 .about-value-card--green:hover { border-color: #a7f3d0; }
-.about-value-card--gold:hover  { border-color: #fde68a; }
+.about-value-card--gold:hover  { border-color: #8db7d8; }
 .about-value-card--purple:hover{ border-color: #ddd6fe; }
 
 .about-value-card__icon {
@@ -113,7 +113,7 @@
 
 .about-value-card__icon--blue   { background: var(--clr-primary-100);  color: var(--clr-primary-700); }
 .about-value-card__icon--green  { background: #d1fae5; color: var(--clr-accent-600); }
-.about-value-card__icon--gold   { background: #fef3c7; color: #b45309; }
+.about-value-card__icon--gold   { background: rgb(87 214 255 / 0.14); color: #cfe9fb; }
 .about-value-card__icon--purple { background: #ede9fe; color: #7c3aed; }
 
 .about-value-card__title {

@@ -174,8 +174,8 @@
 }
 
 .roadmap-phase--blue.roadmap-phase--open   { border-color: var(--clr-primary-300); }
-.roadmap-phase--green.roadmap-phase--open  { border-color: #6ee7b7; }
-.roadmap-phase--gold.roadmap-phase--open   { border-color: #fcd34d; }
+.roadmap-phase--green.roadmap-phase--open  { border-color: #4cc9a7; }
+.roadmap-phase--gold.roadmap-phase--open   { border-color: #8db7d8; }
 .roadmap-phase--purple.roadmap-phase--open { border-color: #c4b5fd; }
 
 .roadmap-phase__header {
@@ -204,7 +204,7 @@
 
 .roadmap-phase__icon--blue   { background: var(--clr-primary-100);  color: var(--clr-primary-700); }
 .roadmap-phase__icon--green  { background: #d1fae5; color: var(--clr-accent-600); }
-.roadmap-phase__icon--gold   { background: #fef3c7; color: #b45309; }
+.roadmap-phase__icon--gold   { background: rgb(87 214 255 / 0.14); color: #cfe9fb; }
 .roadmap-phase__icon--purple { background: #ede9fe; color: #7c3aed; }
 
 .roadmap-phase__info { flex: 1; display: flex; flex-direction: column; gap: 0.2rem; }

@@ -55,7 +55,7 @@ const INITIAL_MESSAGES = [
   {
     id: 0,
     role: 'assistant',
-    text: "Hi! I'm the LaunchBridge AI Assistant.\n\nAsk me anything about starting a business abroad: visas, registration, costs, documents, or a specific country.",
+    text: "Hi! I'm your LaunchBridge assistant.\n\nAsk me anything about starting a business abroad: visas, registration, costs, documents, or a specific country.",
     time: new Date().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' }),
   },
 ]
@@ -129,21 +129,21 @@ export default function Chatbot() {
   return (
     <>
       {!open && (
-        <button className="chatbot-fab" onClick={() => setOpen(true)} aria-label="Open AI assistant">
+        <button className="chatbot-fab" onClick={() => setOpen(true)} aria-label="Open launch assistant">
           <MessageSquare size={22} />
-          <span className="chatbot-fab__badge" aria-hidden="true">AI</span>
+          <span className="chatbot-fab__badge" aria-hidden="true">Help</span>
         </button>
       )}
 
       {open && (
-        <div className={`chatbot-window${minimised ? ' chatbot-window--mini' : ''}`} role="dialog" aria-label="LaunchBridge AI Assistant" aria-modal="false">
+        <div className={`chatbot-window${minimised ? ' chatbot-window--mini' : ''}`} role="dialog" aria-label="LaunchBridge assistant" aria-modal="false">
           <div className="chatbot-header">
             <div className="chatbot-header__info">
               <div className="chatbot-header__avatar" aria-hidden="true">
                 <Bot size={16} />
               </div>
               <div>
-                <p className="chatbot-header__name">AI Assistant</p>
+                <p className="chatbot-header__name">Launch Assistant</p>
                 <p className="chatbot-header__status">
                   <span className="chatbot-header__dot" aria-hidden="true" />
                   Online
@@ -169,7 +169,7 @@ export default function Chatbot() {
                     <div className="chat-msg__avatar chat-msg__avatar--bot" aria-hidden="true">
                       <Bot size={16} />
                     </div>
-                    <div className="chat-typing" aria-label="AI is typing">
+                    <div className="chat-typing" aria-label="Assistant is typing">
                       <span /><span /><span />
                     </div>
                   </div>

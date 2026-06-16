@@ -3,3 +3,323 @@
   width: 100%;
   min-height: 100vh;
 }
+
+.page {
+  position: relative;
+  isolation: isolate;
+}
+
+.page-content {
+  position: relative;
+  z-index: 1;
+}
+
+.explore-header,
+.roadmap-hero,
+.costs-hero,
+.stories-hero,
+.forum-hero,
+.about-hero {
+  background:
+    linear-gradient(135deg, rgb(31 138 158 / 0.12), rgb(76 201 167 / 0.08)),
+    var(--page-hero-bg);
+  border-bottom: 1px solid rgb(255 255 255 / 0.1);
+}
+
+.explore-header > .container,
+.roadmap-hero > .container,
+.costs-hero > .container,
+.stories-hero > .container,
+.forum-hero > .container,
+.about-hero > .container {
+  position: relative;
+  z-index: 1;
+}
+
+.explore-header__title,
+.roadmap-hero__title,
+.costs-hero__title,
+.stories-hero__title,
+.forum-hero__title,
+.about-hero__title,
+.roadmap-form__title,
+.roadmap-result__title,
+.costs-table__title,
+.country-card__name,
+.roadmap-step__title,
+.roadmap-phase__name {
+  color: var(--clr-text);
+}
+
+.explore-header__subtitle,
+.roadmap-hero__subtitle,
+.costs-hero__subtitle,
+.stories-hero__subtitle,
+.forum-hero__subtitle,
+.about-hero__subtitle,
+.roadmap-result__subtitle,
+.country-card__region,
+.country-card__stat,
+.roadmap-step__desc,
+.roadmap-phase__duration,
+.costs-table__note,
+.costs-cta p {
+  color: var(--clr-muted);
+}
+
+.story-card__name,
+.story-card__summary,
+.stories-cta__title,
+.thread-card__title,
+.about-value-card__title,
+.about-creator__name,
+.faq-item__question,
+.about-contact__title {
+  color: var(--clr-text);
+}
+
+.story-card__meta,
+.story-card__detail,
+.story-card__excerpt,
+.stories-cta__subtitle,
+.thread-card__preview,
+.thread-card__time,
+.thread-card__stat,
+.forum-count,
+.forum-cta-note,
+.about-mission__body,
+.about-value-card__desc,
+.about-creator__bio,
+.faq-item__answer,
+.about-contact__subtitle,
+.about-contact__detail,
+.about-contact__form-label {
+  color: var(--clr-muted);
+}
+
+.about-mission,
+.about-values,
+.about-creator,
+.about-faq,
+.about-contact {
+  background: rgb(9 13 19 / 0.28);
+}
+
+.about-mission__body em,
+.thread-card__author {
+  color: #9fffe2;
+}
+
+.story-card__avatar,
+.thread-card__avatar,
+.about-creator__avatar {
+  background: linear-gradient(135deg, #1f8a9e, #3eb59b);
+  color: #101828;
+}
+
+.story-card__excerpt {
+  border-left-color: rgb(141 183 216 / 0.48);
+}
+
+.thread-card--pinned {
+  background:
+    linear-gradient(145deg, rgb(141 183 216 / 0.13), rgb(76 201 167 / 0.06)),
+    rgb(9 13 19 / 0.68);
+  border-color: rgb(141 183 216 / 0.34);
+}
+
+.thread-card__tag,
+.forum-category-btn {
+  background: rgb(255 255 255 / 0.08);
+  color: rgb(255 255 255 / 0.68);
+  border: 1px solid rgb(255 255 255 / 0.1);
+}
+
+.forum-category-btn:hover,
+.faq-item__question:hover {
+  background: rgb(255 255 255 / 0.1);
+  color: #fff;
+}
+
+.forum-category-btn--active {
+  background: linear-gradient(135deg, #1f8a9e, #3eb59b);
+  color: #101828;
+}
+
+.forum-search-wrap {
+  padding: 0.75rem;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: var(--radius-lg);
+  background: rgb(0 0 0 / 0.18);
+  backdrop-filter: blur(16px);
+}
+
+.forum-search__input {
+  border-color: rgb(255 255 255 / 0.14);
+  background: rgb(255 255 255 / 0.08);
+  color: var(--clr-text);
+}
+
+.faq-item[open] {
+  border-color: rgb(76 201 167 / 0.38);
+}
+
+.faq-item__answer {
+  border-top-color: rgb(255 255 255 / 0.08);
+}
+
+.explore-content,
+.roadmap-body,
+.costs-body,
+.stories-body,
+.forum-body,
+.about-body {
+  position: relative;
+}
+
+.country-card,
+.roadmap-form,
+.roadmap-progress,
+.roadmap-phase,
+.costs-summary__card,
+.costs-table-wrap,
+.story-card,
+.stories-cta__card,
+.thread-card,
+.forum-cta-note,
+.about-value-card,
+.about-creator__card,
+.faq-item,
+.about-contact__card {
+  border-radius: var(--radius-lg);
+  background:
+    linear-gradient(145deg, rgb(255 255 255 / 0.11), rgb(255 255 255 / 0.035)),
+    rgb(9 13 19 / 0.64);
+  border: 1px solid rgb(255 255 255 / 0.12);
+  box-shadow: var(--shadow-md);
+  backdrop-filter: blur(18px);
+  transform-style: preserve-3d;
+}
+
+.country-card:hover,
+.roadmap-phase:hover,
+.costs-summary__card:hover,
+.story-card:hover,
+.thread-card:hover,
+.about-value-card:hover {
+  border-color: rgb(141 183 216 / 0.44);
+  box-shadow: var(--shadow-lg);
+}
+
+.country-card--hot {
+  border-color: rgb(141 183 216 / 0.32);
+}
+
+.country-card__flag,
+.roadmap-phase__icon,
+.feature-card__icon {
+  background: linear-gradient(135deg, rgb(141 183 216 / 0.22), rgb(76 201 167 / 0.2));
+  color: #cfe9fb;
+}
+
+.explore-filters,
+.costs-selectors {
+  padding: 0.75rem;
+  border: 1px solid rgb(255 255 255 / 0.1);
+  border-radius: var(--radius-lg);
+  background: rgb(0 0 0 / 0.18);
+  backdrop-filter: blur(16px);
+}
+
+.explore-filters__input,
+.footer__newsletter-input,
+.chatbot-input {
+  border-color: rgb(255 255 255 / 0.14);
+  color: var(--clr-text);
+}
+
+.explore-results-count,
+.roadmap-form__label,
+.costs-label,
+.roadmap-progress__label,
+.roadmap-progress__count,
+.roadmap-phase__progress-mini {
+  color: rgb(255 255 255 / 0.68);
+}
+
+.roadmap-progress__bar {
+  background: rgb(255 255 255 / 0.08);
+}
+
+.roadmap-progress__fill {
+  background: linear-gradient(90deg, #1f8a9e, #3eb59b);
+}
+
+.roadmap-phase__header:hover,
+.roadmap-step:hover,
+.costs-table__row:hover {
+  background: rgb(255 255 255 / 0.06);
+}
+
+.roadmap-phase__body,
+.roadmap-result__footer,
+.chatbot-input-row {
+  border-color: rgb(255 255 255 / 0.1);
+}
+
+.roadmap-form__error {
+  background: rgb(47 127 149 / 0.12);
+  border-color: rgb(47 127 149 / 0.32);
+  color: #cfe9fb;
+}
+
+.costs-summary__card--min,
+.costs-summary__card--max {
+  color: var(--clr-text);
+}
+
+.costs-summary__card--min svg {
+  color: #8db7d8;
+}
+
+.costs-summary__card--max svg {
+  color: #4cc9a7;
+}
+
+.costs-table__head {
+  background: rgb(255 255 255 / 0.08);
+  color: rgb(255 255 255 / 0.62);
+}
+
+.costs-table__row {
+  border-bottom-color: rgb(255 255 255 / 0.08);
+}
+
+.costs-table__category {
+  color: var(--clr-text);
+}
+
+.costs-table__amount--min {
+  color: #cfe9fb;
+}
+
+.costs-table__amount--max {
+  color: #9fffe2;
+}
+
+.costs-table__total {
+  background: linear-gradient(135deg, rgb(31 138 158 / 0.16), rgb(76 201 167 / 0.12));
+}
+
+.costs-disclaimer {
+  background: rgb(141 183 216 / 0.12);
+  border-color: rgb(141 183 216 / 0.28);
+  color: #cfe9fb;
+}
+
+@media (max-width: 640px) {
+  .explore-filters,
+  .costs-selectors {
+    padding: 0.625rem;
+  }
+}

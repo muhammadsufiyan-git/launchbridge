@@ -15,7 +15,7 @@ const FEATURES = [
   { Icon: Lightbulb, color: 'green', title: 'Business Idea Validator', desc: 'Check market fit, demand signals, and common risks before spending serious time or money.' },
   { Icon: TrendingUp, color: 'gold', title: 'Funding & Investment', desc: 'Discover grants, loans, accelerators, and investor networks relevant to your target country.' },
   { Icon: CheckCircle, color: 'purple', title: 'Progress Tracker', desc: 'Save milestones, tick off completed steps, and return to your plan from any device.' },
-  { Icon: MessageSquare, color: 'blue', title: 'AI Chatbot Assistant', desc: 'Ask questions about setup, documents, timelines, and costs with context-aware guidance.' },
+  { Icon: MessageSquare, color: 'blue', title: 'Launch Assistant', desc: 'Ask questions about setup, documents, timelines, and costs with context-aware guidance.' },
   { Icon: Users, color: 'green', title: 'Founder Community', desc: 'Learn from other builders, share practical experiences, and get peer support during launch.' },
   { Icon: UserCheck, color: 'gold', title: 'Consultant Connect', desc: 'Get matched with verified local consultants, accountants, and setup specialists when needed.' },
   { Icon: Globe, color: 'purple', title: 'Global-First Support', desc: 'Designed for founders operating across borders, currencies, languages, and legal systems.' },
@@ -68,6 +68,12 @@ const TESTIMONIALS = [
   },
 ]
 
+const LAUNCH_TOOLS = [
+  { Icon: Globe, label: 'Explore markets', value: '24 live filters', to: '/explore' },
+  { Icon: FileText, label: 'Build roadmap', value: '5-phase plan', to: '/roadmap' },
+  { Icon: DollarSign, label: 'Estimate budget', value: 'Min-max costs', to: '/costs' },
+]
+
 function FeatureCard({ Icon, color, title, desc }) {
   return (
     <article className={`feature-card feature-card--${color}`}>
@@ -117,30 +123,43 @@ function TestimonialCard({ name, role, text, avatar, market }) {
 
 function HeroVisual() {
   return (
-    <div className="hero__visual anim-fade-up delay-3" aria-hidden="true">
-      <div className="hero-3d">
-        <div className="hero-3d__stage">
-          <div className="hero-3d__globe">
-            <span className="hero-3d__lat hero-3d__lat--1" />
-            <span className="hero-3d__lat hero-3d__lat--2" />
-            <span className="hero-3d__lat hero-3d__lat--3" />
-            <span className="hero-3d__ring hero-3d__ring--1" />
-            <span className="hero-3d__ring hero-3d__ring--2" />
-            <span className="hero-3d__pin hero-3d__pin--1">UK</span>
-            <span className="hero-3d__pin hero-3d__pin--2">US</span>
-            <span className="hero-3d__pin hero-3d__pin--3">AE</span>
+    <div className="hero__visual anim-fade-up delay-3">
+      <div className="mission-console" aria-label="LaunchBridge command center preview">
+        <div className="mission-console__topline">
+          <span>Global launch engine</span>
+          <strong>Online</strong>
+        </div>
+        <div className="mission-console__orbit" aria-hidden="true">
+          <div className="mission-console__core">
+            <Globe size={78} strokeWidth={0.85} />
+            <span>LB</span>
           </div>
-          <div className="hero-3d__panel hero-3d__panel--top">
-            <span>Launch Plan</span>
-            <strong>72% ready</strong>
-          </div>
-          <div className="hero-3d__panel hero-3d__panel--left">
+          <span className="mission-console__node mission-console__node--uk">UK</span>
+          <span className="mission-console__node mission-console__node--us">US</span>
+          <span className="mission-console__node mission-console__node--ae">AE</span>
+          <span className="mission-console__node mission-console__node--sg">SG</span>
+        </div>
+        <div className="mission-console__route">
+          <span>Idea</span>
+          <i />
+          <span>Country</span>
+          <i />
+          <span>Roadmap</span>
+          <i />
+          <span>Launch</span>
+        </div>
+        <div className="mission-console__metrics">
+          <div>
             <span>Markets</span>
             <strong>180+</strong>
           </div>
-          <div className="hero-3d__panel hero-3d__panel--right">
-            <span>Setup time</span>
-            <strong>1-14 days</strong>
+          <div>
+            <span>Business types</span>
+            <strong>500+</strong>
+          </div>
+          <div>
+            <span>Plan speed</span>
+            <strong>Instant</strong>
           </div>
         </div>
       </div>
@@ -152,11 +171,6 @@ export default function Home() {
   return (
     <main className="home">
       <section className="hero" aria-label="Hero">
-        <div className="hero__bg-shapes" aria-hidden="true">
-          <div className="hero__shape hero__shape--1" />
-          <div className="hero__shape hero__shape--2" />
-          <div className="hero__shape hero__shape--3" />
-        </div>
         <div className="container hero__inner">
           <div className="hero__content anim-fade-up">
             <div className="hero__badges">
@@ -164,12 +178,11 @@ export default function Home() {
               <span className="badge badge-green">180+ Countries</span>
             </div>
             <h1 className="hero__title">
-              Build beyond borders with <span className="gradient-text">LaunchBridge</span>
+              LaunchBridge is your <span className="gradient-text">global business cockpit</span>
             </h1>
             <p className="hero__subtitle">
-              Stop jumping between scattered government pages, forums, and outdated blogs.
-              Get your <strong>complete, personalized business launch roadmap</strong> for any
-              country in the world in minutes.
+              Pick a market, compare setup friction, estimate costs, and generate a step-by-step
+              launch route from one interactive command center.
             </p>
             <div className="hero__actions">
               <Link to="/roadmap" className="btn btn-primary btn-lg">
@@ -183,11 +196,24 @@ export default function Home() {
             </div>
             <div className="hero__trust">
               <Shield size={14} />
-              <span>No sign-up required. 100% free starter tools. Built for founders worldwide.</span>
+              <span>Move your mouse over the scene, choose a tool, and start building your launch path.</span>
             </div>
           </div>
 
           <HeroVisual />
+        </div>
+
+        <div className="container tool-dock" aria-label="Primary launch tools">
+          {LAUNCH_TOOLS.map(({ Icon, label, value, to }) => (
+            <Link to={to} className="tool-dock__item" key={label}>
+              <span className="tool-dock__icon"><Icon size={19} /></span>
+              <span>
+                <strong>{label}</strong>
+                <small>{value}</small>
+              </span>
+              <ArrowRight size={16} />
+            </Link>
+          ))}
         </div>
 
         <div className="hero__countries container">

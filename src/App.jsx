@@ -2,6 +2,8 @@ import { BrowserRouter, Routes, Route, Navigate } from 'react-router-dom'
 import Navbar from './components/Navbar'
 import Footer from './components/Footer'
 import Chatbot from './components/Chatbot'
+import ImmersiveScene from './components/ImmersiveScene'
+import ScrollTextReveal from './components/ScrollTextReveal'
 import Home from './pages/Home'
 import Explore from './pages/Explore'
 import Roadmap from './pages/Roadmap'
@@ -14,6 +16,8 @@ import './App.css'
 function Layout() {
   return (
     <div className="page">
+      <ImmersiveScene />
+      <ScrollTextReveal />
       <Navbar />
       <main className="page-content">
         <Routes>
